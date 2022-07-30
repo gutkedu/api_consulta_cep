@@ -2,6 +2,11 @@ import { AppError } from "@shared/errors/AppError";
 import { NextFunction, Request, Response } from "express";
 import { client } from "../../redis/client";
 
+interface IResponse {
+  address: string;
+  isCached: boolean;
+}
+
 export async function isCached(
   req: Request,
   res: Response,
@@ -14,7 +19,9 @@ export async function isCached(
   });
 
   if (data != null) {
-    return res.status(200).send(data);
+    return res
+      .status(200)
+      .send({ address: JSON.parse(data), isCached: true } as IResponse);
   } else {
     return next();
   }

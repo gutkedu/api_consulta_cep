@@ -23,6 +23,6 @@ export class GetAddressController {
 
     const address = await getAddressUseCase.execute(cep);
 
-    return res.status(200).json(address);
+    return res.status(200).json({ address, isCached: false });
   }
 }
