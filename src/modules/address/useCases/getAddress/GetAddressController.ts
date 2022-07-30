@@ -8,7 +8,7 @@ import { GetAddressUseCase } from "./GetAddressUseCase";
 
 export class GetAddressController {
   async handle(req: Request, res: Response): Promise<Response> {
-    const { cep } = req.params;
+    const { cep } = req.body;
 
     const cepValidation = new Cep();
     cepValidation.cep = cep;

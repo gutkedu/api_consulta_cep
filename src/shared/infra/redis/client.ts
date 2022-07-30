@@ -1,7 +1,8 @@
+import cacheConfig from "@config/cacheConfig";
 import { createClient } from "redis";
 
 const client = createClient({
-  url: "redis://cache:6379",
+  url: cacheConfig.redis_url,
 });
 
 client.on("error", (err) => console.log("Redis client error: ", err));

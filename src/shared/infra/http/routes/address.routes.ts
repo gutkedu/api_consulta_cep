@@ -6,6 +6,6 @@ const addressRoute = Router();
 
 const getAddressController = new GetAddressController();
 
-addressRoute.get("/:cep", isCached, getAddressController.handle);
+addressRoute.post("/", isCached, getAddressController.handle);
 
 export { addressRoute };

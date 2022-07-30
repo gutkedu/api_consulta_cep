@@ -7,7 +7,7 @@ export async function isCached(
   res: Response,
   next: NextFunction
 ) {
-  const { cep } = req.params;
+  const { cep } = req.body;
 
   const data = await client.get(cep).catch((err) => {
     throw new AppError("redis error", err);
