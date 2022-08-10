@@ -1,5 +1,3 @@
-# egadnet_challenge
-
 ## 🚀 Tecnologias
 
 - [Node.js](https://nodejs.org/en/)
